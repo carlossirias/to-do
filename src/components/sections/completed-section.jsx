@@ -3,6 +3,7 @@ import {Checkbox} from "@nextui-org/react";
 import { DeleteSingleButton } from "../delete-single";
 import { useEffect, useState } from "react";
 import { DeleteAllButton } from "../delete-all";
+import { EmptySection } from "../empty-section";
 
 
 export function CompletedSection()
@@ -31,7 +32,7 @@ export function CompletedSection()
 
     return(
         <>
-            {hasActiveItems && <div className="w-full h-full flex flex-col montserrat gap-[26px] py-4">
+            {hasActiveItems ? <div className="w-full h-full flex flex-col montserrat gap-[26px] py-4">
                 {
                     activeItems.map((todo) => {
                         return <div key={todo.id} className="flex place-content-between">
@@ -43,7 +44,8 @@ export function CompletedSection()
                 <div className="flex justify-end w-full">
                     <DeleteAllButton />
                 </div>
-            </div>}
+            </div>
+            : <EmptySection message="You haven't completed any tasks yet."/>}
         </>
     )
 }

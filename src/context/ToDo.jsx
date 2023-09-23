@@ -15,7 +15,23 @@ import { useState } from "react";
         id:1,
         title:'⚡️. Improve my english.',
         done: false
-    }])
+    },
+    {
+        id : 3,
+        title:"🎮. Play some games.",
+        done:false
+    },
+    {
+        id:4,
+        title:'🔥. Watch a movie',
+        done:true
+    },
+    {
+        id:5,
+        title:'💻. Work on the project',
+        done:false
+    }
+    ])
 
     const [toDoIdCounter, setToDoIdCounter] = useState(toDo.length);
     console.log(toDo)
