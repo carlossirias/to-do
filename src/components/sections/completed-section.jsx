@@ -1,6 +1,6 @@
 import { useToDo } from "../../hooks/useToDo"
 import {Checkbox} from "@nextui-org/react";
-import { TrashIcon } from "../icons";
+import { DeleteSingleButton } from "../delete-single";
 import { useEffect, useState } from "react";
 
 
@@ -26,11 +26,6 @@ export function CompletedSection()
         setActiveItems(filterItems(newTodo))
     }
 
-    function deleteToDo(id)
-    {
-        const newToDo = toDo.filter((todo) => { return todo.id != id})
-        setToDo(newToDo)
-    }
 
     return(
         <>
@@ -39,11 +34,13 @@ export function CompletedSection()
                     activeItems.map((todo) => {
                         return <div key={todo.id} className="flex place-content-between">
                             <Checkbox value={todo.id} onChange={changeStatus} radius="sm" size="lg" defaultSelected={todo.done} lineThrough><span className="font-semibold max-sm:w-fit max-sm:max-w-[16rem] truncate text-ellipsis">{todo.title}</span></Checkbox>
-
-                            <button onClick={()=>{deleteToDo(todo.id)}}><TrashIcon></TrashIcon></button>
+                            <DeleteSingleButton id={todo.id}/>
                         </div> 
                     })
                 }
+                <div className="flex justify-end w-full">
+                    
+                </div>
             </div>
         </>
     )

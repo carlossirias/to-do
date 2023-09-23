@@ -31,7 +31,7 @@ export function ActiveSection()
             <div className="w-full h-full flex flex-col montserrat gap-[26px] py-3">
                 {
                     activeItems.map((todo) => {
-                        return <Checkbox key={todo.id} value={todo.id} onChange={changeStatus} radius="sm" size="lg" defaultSelected={todo.done} lineThrough><span className="font-semibold max-sm:w-80 truncate text-ellipsis">{todo.title}</span></Checkbox>
+                        return <Checkbox key={todo.id} value={todo.id} onChange={changeStatus} radius="sm" size="lg" defaultSelected={todo.done} lineThrough><span className="font-semibold max-sm:w-fit max-sm:max-w-[20rem] truncate text-ellipsis">{todo.title}</span></Checkbox>
                     })
                 }
             </div>
