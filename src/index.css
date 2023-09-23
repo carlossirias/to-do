@@ -44,3 +44,8 @@ body
     transform: translateY(0px);
   }
 }
+
+.done
+{
+  text-decoration-line: line-through;
+}

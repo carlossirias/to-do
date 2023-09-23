@@ -1,12 +1,10 @@
 import { useState } from "react"
-import { useToDo } from "../hooks/useToDo";
-
-
+import { AllSection } from "./sections/all-section";
 
 export function ToDoSection()
 {
     const [selection, setSelection] = useState('All')
-    const {toDo, setToDo} =  useToDo()
+   
 
     const handleSelection = (event) =>
     {
@@ -22,6 +20,9 @@ export function ToDoSection()
                     <button value={'Completed'} onClick={handleSelection} className={`p-5 montserrat flex justify-center font-semibold ${selection === 'Completed'? 'select__button' : ''}`}>Completed</button>
                 </div>
                 <hr className="h-[1px] bg-[#BDBDB]"/>
+                {selection === 'All' && <AllSection/>}
+                
+
             </article>
         </section>
     )
