@@ -9,6 +9,7 @@ export function DeleteSingleButton({id})
     function deleteToDo(id)
     {
         const newToDo = toDo.filter((todo) => { return todo.id != id})
+        window.localStorage.setItem('todo',  JSON.stringify(newToDo))
         setToDo(newToDo)
     }
 

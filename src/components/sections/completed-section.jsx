@@ -25,6 +25,7 @@ export function CompletedSection()
         const newTodo = toDo
         newTodo[index].done = !newTodo[index].done
 
+        window.localStorage.setItem('todo',  JSON.stringify(newTodo))
         setToDo(newTodo)
         setActiveItems(filterItems(newTodo))
     }

@@ -22,6 +22,8 @@ export function AddForm()
             },
             ...toDo
         ]
+
+        window.localStorage.setItem('todo',  JSON.stringify(newTodo))
         setToDo(newTodo)
         inputForm.value = '' 
     }

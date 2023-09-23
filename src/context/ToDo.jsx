@@ -6,7 +6,8 @@ import { useState } from "react";
  // eslint-disable-next-line react/prop-types
  export function ToDoProvider({children})
  {
-    const [toDo, setToDo] = useState([{
+    const toDoInitialState = JSON.parse(window.localStorage.getItem('todo'))
+    const [toDo, setToDo] = useState(toDoInitialState || [{
         id:2,
         title:'🌱. Finish this challenge.',
         done: true
@@ -17,24 +18,14 @@ import { useState } from "react";
         done: false
     },
     {
-        id : 3,
-        title:"🎮. Play some games.",
-        done:false
-    },
-    {
-        id:4,
+        id:3,
         title:'🔥. Watch a movie',
         done:true
-    },
-    {
-        id:5,
-        title:'💻. Work on the project',
-        done:false
     }
     ])
 
     const [toDoIdCounter, setToDoIdCounter] = useState(toDo.length);
-    console.log(toDo)
+
     return(
         <ToDoConext.Provider value={
             {
