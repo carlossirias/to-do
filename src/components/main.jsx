@@ -2,7 +2,7 @@
 export function Main({children})
 {
     return(
-        <main className="w-full flex justify-center h-full">
+        <main className="w-full flex-1 flex justify-center h-full">
             {children}
         </main>
     )
