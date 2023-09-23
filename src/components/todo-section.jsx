@@ -5,11 +5,13 @@ import { CompletedSection } from "./sections/completed-section";
 
 export function ToDoSection()
 {
-    const [selection, setSelection] = useState('All')
+    const selectionInitialState = JSON.parse(window.localStorage.getItem('selection'))
+    const [selection, setSelection] = useState(selectionInitialState || 'All')
    
 
     const handleSelection = (event) =>
     {
+        window.localStorage.setItem('selection',  JSON.stringify(event.target.value))
         setSelection(event.target.value);
     }
 
