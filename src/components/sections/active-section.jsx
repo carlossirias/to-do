@@ -9,6 +9,8 @@ export function ActiveSection()
     const {toDo, setToDo} = useToDo()
     const [activeItems, setActiveItems] = useState(toDo.filter((todo) => { return !todo.done}))
     const hasActiveItems = activeItems.length > 0
+    const hasToDo = toDo.length > 0
+
     
     function filterItems(newTodo){ return newTodo.filter((todo) => { return !todo.done})}
 
@@ -37,7 +39,7 @@ export function ActiveSection()
                     })
                 }
             </div>
-            : <EmptySection message="You don't have tasks to perform! 🥳" />}
+            : hasToDo ? <EmptySection message="You don't have tasks to perform! 🥳" isConfetti/> : <EmptySection message="There's no tasks to perform!"/> }
         </>
     )
 }
