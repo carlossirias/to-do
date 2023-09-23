@@ -7,17 +7,17 @@ import { useState } from "react";
  export function ToDoProvider({children})
  {
     const [toDo, setToDo] = useState([{
-        id:1,
+        id:2,
         title:'🌱. Finish this challenge.',
         done: true
     },
     {
-        id:2,
+        id:1,
         title:'⚡️. Improve my english.',
         done: false
     }])
 
-    const [toDoIdCounter, setToDoIdCounter] = useState(3);
+    const [toDoIdCounter, setToDoIdCounter] = useState(toDo.length);
     return(
         <ToDoConext.Provider value={
             {
