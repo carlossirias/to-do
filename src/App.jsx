@@ -1,11 +1,19 @@
 import { Header } from './components/header'
+import { Main } from './components/main'
+import { ToDoSection } from './components/todo-section'
 import './App.css'
 
 function App() {
 
   return (
     <>
-      <Header></Header>
+      <Header/>
+
+      <Main>
+        <ToDoSection>
+          
+        </ToDoSection>
+      </Main>
     </>
   )
 }
