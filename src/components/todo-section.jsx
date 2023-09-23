@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { AllSection } from "./sections/all-section";
 import { ActiveSection } from "./sections/active-section";
+import { CompletedSection } from "./sections/completed-section";
 
 export function ToDoSection()
 {
@@ -23,6 +24,7 @@ export function ToDoSection()
                 <hr className="h-[1px] bg-[#BDBDB]"/>
                 {selection === 'All' && <AllSection/>}
                 {selection === 'Active' && <ActiveSection/>}
+                {selection === 'Completed' && <CompletedSection/>}
 
             </article>
         </section>
