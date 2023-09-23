@@ -19,7 +19,7 @@ export function AddForm()
         setToDo(newTodo)
     }
 
-    console.log(toDo)
+
     return(
         <form action="" className="w-full py-5 flex gap-6" onSubmit={addToDo}>
             <input type="text" name="todo-name" className="outline-none border w-full border-[#BDBDBD] rounded-xl py-4 px-3 focus:ring-blue-50  focus:border-blue-500 dark:focus:ring-blue-50  dark:focus:border-blue-500 block" placeholder="add details"/>
