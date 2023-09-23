@@ -2,12 +2,14 @@ import { useToDo } from "../../hooks/useToDo"
 import {Checkbox} from "@nextui-org/react";
 import { DeleteSingleButton } from "../delete-single";
 import { useEffect, useState } from "react";
+import { DeleteAllButton } from "../delete-all";
 
 
 export function CompletedSection()
 {
     const {toDo, setToDo} = useToDo()
     const [activeItems, setActiveItems] = useState(toDo.filter((todo) => { return todo.done}))
+    const hasActiveItems = activeItems.length > 0
     
     function filterItems(newTodo){ return newTodo.filter((todo) => { return todo.done})}
 
@@ -29,7 +31,7 @@ export function CompletedSection()
 
     return(
         <>
-            <div className="w-full h-full flex flex-col montserrat gap-[26px] py-4">
+            {hasActiveItems && <div className="w-full h-full flex flex-col montserrat gap-[26px] py-4">
                 {
                     activeItems.map((todo) => {
                         return <div key={todo.id} className="flex place-content-between">
@@ -39,9 +41,9 @@ export function CompletedSection()
                     })
                 }
                 <div className="flex justify-end w-full">
-                    
+                    <DeleteAllButton />
                 </div>
-            </div>
+            </div>}
         </>
     )
 }
