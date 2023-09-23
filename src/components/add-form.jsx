@@ -13,6 +13,7 @@ export function AddForm()
         const inputForm = document.getElementById(formId)
 
         if(fields['todo-name'] === '') return
+        if(titleExist(fields['todo-name'])) return
 
         const newTodo = [
             {
@@ -26,6 +27,11 @@ export function AddForm()
         window.localStorage.setItem('todo',  JSON.stringify(newTodo))
         setToDo(newTodo)
         inputForm.value = '' 
+    }
+
+    function titleExist(title)
+    {
+        return toDo.filter((todo)=>{return todo.title.toLowerCase() == title.toLowerCase()}).length > 0 
     }
 
     return(
