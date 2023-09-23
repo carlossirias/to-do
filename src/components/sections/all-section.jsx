@@ -1,9 +1,11 @@
 import { AddForm } from "../add-form"
 import { useToDo } from "../../hooks/useToDo"
+import {Checkbox} from "@nextui-org/react";
 
 export function AllSection()
 {
     const {toDo} = useToDo()
+
 
     return(
         <>
@@ -11,10 +13,7 @@ export function AllSection()
             <div className="w-full h-full flex flex-col montserrat gap-[26px] py-3">
                 {
                     toDo.map((todo) => {
-                        return <div className="flex gap-2" key={todo.id} id={todo.id}>
-                            <input type="checkbox" className="w-6 h-6" checked={todo.done}></input>
-                            <span className={`montserrat font-semibold ${todo.done ? 'done' : ''}`}>{todo.title}</span>
-                        </div>
+                        return <Checkbox key={todo.id} radius="sm" size="lg" defaultSelected={todo.done} lineThrough><span className="font-semibold">{todo.title}</span></Checkbox>
                     })
                 }
             </div>
