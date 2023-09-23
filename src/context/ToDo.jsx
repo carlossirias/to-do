@@ -17,7 +17,8 @@ import { useState } from "react";
         done: false
     }])
 
-    const [toDoIdCounter, setToDoIdCounter] = useState(3);
+    const [toDoIdCounter, setToDoIdCounter] = useState(toDo.length);
+    console.log(toDo)
     return(
         <ToDoConext.Provider value={
             {
