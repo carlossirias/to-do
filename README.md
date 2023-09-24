@@ -41,7 +41,7 @@
 
 Small application that allows us to archive our daily tasks. This application has been faithfully created according to the challenge's requirements. If you have feedback, I'm definitely eager to hear it. 
 
-- **Where can I see your demo?**The demo is fully available at the following link: <a href="https://to-do-eight-sigma.vercel.app/">Demo</a>
+- **Where can I see your demo?** The demo is fully available at the following link: <a href="https://to-do-eight-sigma.vercel.app/">Demo</a>
 
 - **What was your experience?** It was a very intriguing challenge! It has assisted me in enhancing my skills with the React library. At a certain point, I hit a roadblock, but upon revisiting it, I believe I was able to overcome the challenge. :)
 
