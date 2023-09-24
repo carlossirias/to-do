@@ -52,6 +52,7 @@ Small application that allows us to archive our daily tasks. This application ha
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 - [React](https://reactjs.org/)
+- [NextUI](https://nextui.org/)
 - [Tailwind](https://tailwindcss.com/)
 
 ## Features
